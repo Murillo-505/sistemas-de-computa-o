@@ -1,0 +1,8 @@
+moabb
+mne
+scikit-learn
+scipy
+pandas
+numpy
+matplotlib
+seaborn

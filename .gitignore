@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.venv/
+env/
+
+mne_data/
+*.zip
+*.fif
+*.mat
+
+.vscode/
+.idea/
