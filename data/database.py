@@ -1,3 +1,4 @@
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -8,6 +9,11 @@ except ImportError:
     from moabb.datasets import BNCI2014_009 as DatasetP300
 
 from moabb.paradigms import P300
+
+# Localiza automaticamente a pasta raiz (TESDC) e a pasta de resultados (results/data)
+BASE_DIR = Path(__file__).resolve().parent.parent
+RESULTS_DIR = BASE_DIR / "results" / "data"
+RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 print("="*65)
 print("1. CARREGAMENTO E FORMATO ORIGINAL DOS DADOS")
@@ -94,7 +100,8 @@ plt.legend(loc='upper right', fontsize=8)
 plt.grid(True, linestyle='--', alpha=0.5)
 
 plt.tight_layout()
-plt.savefig("entendimento_base_dados.png", dpi=300)
+caminho_img = RESULTS_DIR / "entendimento_base_dados.png"
+plt.savefig(caminho_img, dpi=300)
 plt.show()
 
-print("\nProcesso finalizado! Imagem salva: entendimento_base_dados.png")
+print(f"\nProcesso finalizado! Imagem salva em: {caminho_img}")
